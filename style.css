@@ -1,4 +1,37 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+	background-image: linear-gradient(rgb(226, 25, 112), rgb(118, 67, 148));
+}
+
+body::-webkit-scrollbar {
+	width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+	background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+	background:	#6649b8;
+}
+
+circle {
+    cursor: pointer;
+    shape-rendering: crispEdges;
+    fill: url(#gg);
+}
+
+.centre {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top: -90px;
+	margin-left: -100px;
+	z-index: -1;
 }
