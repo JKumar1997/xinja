@@ -22,8 +22,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 circle {
-    cursor: pointer;
-    shape-rendering: crispEdges;
+    shape-rendering: geometricPrecision;
     fill: url(#gg);
 }
 
