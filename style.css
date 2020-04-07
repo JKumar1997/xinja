@@ -26,11 +26,23 @@ circle {
     fill: url(#gg);
 }
 
-.centre {
+.headcentre {
 	position:absolute;
 	top:50%;
 	left:50%;
 	margin-top: -90px;
 	margin-left: -100px;
+	z-index: -2;
+}
+
+
+.eyepiece {
+	shape-rendering: geometricPrecision;
+	//fill: url(#gg);
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top: -530px;
+	margin-left: -113px;
 	z-index: -1;
 }
