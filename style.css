@@ -25,7 +25,6 @@ body::-webkit-scrollbar-thumb {
 
 circle {
     shape-rendering: geometricPrecision;
-    fill: url(#gg);
 }
 
 .headcentre {
@@ -38,6 +37,7 @@ circle {
 }
 
 .eyepiece {
+	fill: url(#eyepiecegrad);
 	shape-rendering: geometricPrecision;
 	position:absolute;
 	top:50%;
@@ -47,7 +47,7 @@ circle {
 	z-index: -2;
 }
 
-.eyes_heart {   
+.eyes_heart {  
 	shape-rendering: geometricPrecision;
 	position:absolute;
 	top:50%;
