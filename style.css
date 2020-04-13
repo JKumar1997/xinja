@@ -10,19 +10,6 @@ body {
 	background-image: linear-gradient(rgb(226, 25, 112), rgb(118, 67, 148));
 }
 
-body::-webkit-scrollbar {
-	width: 0.25rem;
-}
-
-body::-webkit-scrollbar-track {
-	background: #1e1e24;
-}
-
-body::-webkit-scrollbar-thumb {
-	background:	#6649b8;
-}
-
-
 circle {
     shape-rendering: geometricPrecision;
 }
@@ -37,7 +24,6 @@ circle {
 }
 
 .eyepiece {
-	fill: url(#eyepiecegrad);
 	shape-rendering: geometricPrecision;
 	position:absolute;
 	top:50%;
@@ -52,7 +38,7 @@ circle {
 	position:absolute;
 	top:50%;
 	left:50%;
-	margin-top: -50px;
+	margin-top: -60px;
 	margin-left: -113px;
 	z-index: -1;
 }
