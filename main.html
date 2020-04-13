@@ -1,100 +1,61 @@
 <html>
-
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
-    <script src="sketch.js"></script>
-    <script src="script/jscolor.js"></script>
-    <link rel="stylesheet" tipe="text/css" href="style.css">
-    <script>
-    	function updateHead(color) {
-    		const gradientEndEl = document.querySelector('#gradientEnd');
-    		gradientEndEl.setAttribute('stop-color', `#${color}`);
-    	}
-    </script>
-    <script>
-    	function updateEyepiece(color) {
-    		const gradientEyepiece = document.querySelector('#gradientEndEye');
-    		gradientEyepiece.setAttribute('stop-color', `#${color}`);
-    	}
-    </script>
-    <script>
-    	function updateShadoweye(color) {
-    		const gradientShadow = document.querySelector('#gradientShadoweye');
-    		gradientShadow.setAttribute('stop-color', `#${color}`);
-    	}
-    </script>
-    <script>
-    	function updateShadow(color) {
-    		const updateShadowMain = document.querySelector('#mainshadow');
-    		updateShadowMain.setAttribute('stop-color', `#${color}`);
-    	}
-    </script>
-</head>
-
-<body>
-	<p> Select main colour:</p>
-	<input class="jscolor" value="051947" onchange="updateHead(this.jscolor)" />
-	<p> Select main shadow colour:</p>
-	<input class="jscolor" value="FFFFFF" onchange="updateShadow(this.jscolor)"/>
-	<p> Select the eye-piece colour:</p>
-	<input class="jscolor" value="FFFFFF" onchange="updateEyepiece(this.jscolor)"/>
-	<p>	Select eye-piece shadow colour:</p>
-	<input class="jscolor" value="DCDCDC" onchange="updateShadoweye(this.jscolor)"/>
-
-    <div class="headcentre">
-        <svg width="300" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <style type="text/css">
-                circle {
-                    fill: url(#gg)
-                }
-            </style>
+   <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+      <script src="sketch.js"></script>
+      <script src="script/jscolor.js"></script>
+      <link rel="stylesheet" tipe="text/css" href="style.css">
+   </head>
+   <body>
+      <div class=inputs>
+         <p> Select main colour:</p>
+         <input class="jscolor" value="051947" onchange="updateHead(this.jscolor)" />
+         <p> Select main shadow colour:</p>
+         <input class="jscolor" value="FFFFFF" onchange="updateShadow(this.jscolor)"/>
+         <p> Select the eye-piece colour:</p>
+         <input class="jscolor" value="FFFFFF" onchange="updateEyepiece(this.jscolor)"/>
+         <p> Select eye-piece shadow colour:</p>
+         <input class="jscolor" value="DCDCDC" onchange="updateShadoweye(this.jscolor)"/>
+         <p> Select eye colour:</p>
+         <input class="jscolor" value="051947" onchange="updateEyes(this.jscolor)"/>
+      </div>
+      <div class="headcentre">
+         <svg width="300" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <radialGradient id="gg" fx="50%", fy="2%", fr="0%" spreadMethod="pad">
-                    <stop id="mainshadow" offset="0%" stop-color="#FFF" stop-opacity="1"/>
-                    <stop id="gradientEnd" offset="100%" stop-color="#051947"/>
-                </radialGradient>
+               <radialGradient id="gg" fx="50%", fy="2%", fr="0%" spreadMethod="pad">
+               <stop id="mainshadow" offset="0%" stop-color="#FFF" stop-opacity="1"/>
+               <stop id="gradientEnd" offset="100%" stop-color="#051947"/>
+               </radialGradient>
             </defs>
             <circle cx="110" cy="110" r="110" />
-        </svg>
-    </div>
-
-    <div class="eyepiece">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="700" height="663">
-            <style type="text/css">
-                path {
-                    fill: url(#eyepiecegrad)
-                }
-            </style>
+         </svg>
+      </div>
+      <div class="eyepiece">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="700" height="663">
             <defs>
-                <linearGradient id="eyepiecegrad" x1="0%" , y="0%" , x2="0%" , y2="100%">
-                    <stop id = "gradientEndEye" offset="90%" stop-color="#FFF" />
-                    <stop id = "gradientShadoweye" offset="100%" stop-color="#dcdcdc"/>
-                </linearGradient>
+               <linearGradient id="eyepiecegrad" x1="0%" , y="0%" , x2="0%" , y2="100%">
+               <stop id = "gradientEndEye" offset="90%" stop-color="#FFF" />
+               <stop id = "gradientShadoweye" offset="100%" stop-color="#dcdcdc"/>
+               </linearGradient>
             </defs>
             <g transform="translate(0.000000,663.000000) scale(0.03500,-0.03500)">
-                <path d="M3020 4531 c-113 -4 -259 -12 -325 -19 -364 -37 -428 -44 -510 -57 -49 -8 -121 -19 -160 -25 -38 -6 -98 -15 -131 -20 -71 -11 -194 -54 -286 -101 -107 -54 -162 -103 -230 -202 -90 -132 -123 -254 -113 -417 11 -179 76 -326 201 -459 83 -88 172 -141 304 -181 93 -29 256 -31 400 -7 52 9 136 21 185 26 50 6 133 15 185 21 52 6 147 17 210 25 220 27 724 40 1076 26 175 -7 353 -17 394 -22 41 -6 136 -16 210 -24 74 -8 187 -21 250 -29 63 -8 171 -22 240 -30 140 -18 221 -14 325 16 149 42 266 120 350 232 107 144 145 253 152 441 4 109 2 127 -20 197 -38 115 -84 193 -162 273 -66 68 -159 126 -245 155 -14 5 -49 17 -77 28 -29 11 -72 23 -95 27 -24 3 -77 13 -118 20 -137 25 -294 45 -495 64 -71 7 -193 18 -270 26 -161 17 -919 27 -1245 16z" />
+               <path d="M3020 4531 c-113 -4 -259 -12 -325 -19 -364 -37 -428 -44 -510 -57 -49 -8 -121 -19 -160 -25 -38 -6 -98 -15 -131 -20 -71 -11 -194 -54 -286 -101 -107 -54 -162 -103 -230 -202 -90 -132 -123 -254 -113 -417 11 -179 76 -326 201 -459 83 -88 172 -141 304 -181 93 -29 256 -31 400 -7 52 9 136 21 185 26 50 6 133 15 185 21 52 6 147 17 210 25 220 27 724 40 1076 26 175 -7 353 -17 394 -22 41 -6 136 -16 210 -24 74 -8 187 -21 250 -29 63 -8 171 -22 240 -30 140 -18 221 -14 325 16 149 42 266 120 350 232 107 144 145 253 152 441 4 109 2 127 -20 197 -38 115 -84 193 -162 273 -66 68 -159 126 -245 155 -14 5 -49 17 -77 28 -29 11 -72 23 -95 27 -24 3 -77 13 -118 20 -137 25 -294 45 -495 64 -71 7 -193 18 -270 26 -161 17 -919 27 -1245 16z" />
             </g>
-        </svg>
-    </div>     
-
-    <div class="eyes_wink">
-
-    </div>
-
-    <div class="eyes_star">
-
-    </div>
-
-    <div class="eyes_normal">
-
-    </div>
-
-    <div class="eyes_wink_heart">
-
-    </div>
-
-</body>
-
+         </svg>
+      </div>
+      <div class="eyes">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="95.00pt" height="30.00pt">
+         	<defs>
+         		<linearGradient id="eyegradient">
+				 	<stop id = "eye" offset="90%" stop-color="#051947" />
+         		</linearGradient>
+         	</defs>
+            <g transform="translate(0.000000,30.000000) scale(0.105000,-0.105000)">
+               <path d="M105 279 c-112 -32 -127 -193 -22 -242 43 -21 67 -21 111 -3 49 20 76 61 76 113 0 62 -23 101 -73 124 -47 21 -49 21 -92 8z"/>
+               <path d="M779 280 c-68 -20 -99 -60 -99 -128 0 -55 35 -103 88 -122 57 -20 116 0 150 50 65 96 -30 232 -139 200z"/>
+            </g>
+         </svg>
+      </div>
+   </body>
 </html>
