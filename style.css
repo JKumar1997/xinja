@@ -10,6 +10,12 @@ body {
 	background-image: linear-gradient(rgb(226, 25, 112), rgb(118, 67, 148));
 }
 
+p {
+
+	color: white;
+	font-family: "Montserrat", normal;
+}
+
 circle {
     fill: url(#gg);
     shape-rendering: geometricPrecision;
@@ -46,3 +52,15 @@ circle {
 	z-index: -2;
 }
 
+.inputs {
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top: -190px;
+	margin-left: -500px;
+}
+
+input {
+	border: hidden;
+	border-radius: 5px 5px 5px 5px;
+}

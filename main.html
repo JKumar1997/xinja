@@ -1,23 +1,35 @@
 <html>
    <head>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
       <script src="sketch.js"></script>
       <script src="script/jscolor.js"></script>
       <link rel="stylesheet" tipe="text/css" href="style.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
    </head>
+   <header>
+   <!-- SVG Logo taken directly from xinja.com.au -->
+   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="164px" height="32px" viewBox="0 0 164 32" enable-background="new 0 0 164 32" xml:space="preserve">
+	<g>
+	<path fill="#FFFFFF" d="M22.1,1.7L22.1,1.7c-2.3,2.3-2.3,5.9,0,8.2l4.1,4.1l4.1-4.1c2.3-2.3,2.3-5.9,0-8.2   C28.1-0.6,24.4-0.6,22.1,1.7"/>
+	<path fill="#FFFFFF" d="M9.9,30.3L9.9,30.3c2.3-2.3,2.3-5.9,0-8.2L5.8,18l-4.1,4.1c-2.3,2.3-2.3,5.9,0,8.2   C3.9,32.6,7.6,32.6,9.9,30.3"/>
+	<path fill="#FFFFFF" d="M41.8,26l8.4-10.3l-7.9-9.6c-0.5-0.7-1-1.6-1-2.5c0-1.9,1.4-3.4,3.4-3.4c1.5,0,2.3,0.6,3.1,1.7l6.8,9   l6.7-8.9c0.9-1.2,1.8-1.9,3.3-1.9c1.5,0,3.1,1.2,3.1,3.1c0,1-0.4,1.8-1,2.6l-7.9,9.7l8.3,10.2c0.5,0.7,1,1.6,1,2.5   c0,1.9-1.4,3.4-3.4,3.4c-1.5,0-2.3-0.6-3.1-1.7l-7.3-9.5L47.2,30c-0.9,1.2-1.8,1.9-3.3,1.9c-1.5,0-3.1-1.2-3.1-3.1   C40.8,27.7,41.1,26.9,41.8,26"/>
+	<path fill="#FFFFFF" d="M70.9,3.6c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4v24.8c0,1.9-1.5,3.4-3.4,3.4c-1.9,0-3.4-1.5-3.4-3.4   V3.6z"/>
+	<path fill="#FFFFFF" d="M81.1,3.7c0-1.9,1.5-3.4,3.4-3.4h0.7c1.6,0,2.6,0.8,3.5,2l13.2,17.3v-16c0-1.9,1.5-3.4,3.4-3.4   c1.9,0,3.4,1.5,3.4,3.4v24.7c0,1.9-1.5,3.4-3.4,3.4H105c-1.6,0-2.6-0.8-3.5-2L87.8,11.8v16.6c0,1.9-1.5,3.4-3.4,3.4   c-1.9,0-3.4-1.5-3.4-3.4V3.7z"/>
+	<path fill="#FFFFFF" d="M112.5,29.3c-0.7-0.5-1.3-1.6-1.3-2.6c0-1.8,1.4-3.3,3.2-3.3c0.8,0,1.4,0.2,2,0.7c1.4,1,2.6,1.6,4.1,1.6   c2.7,0,4.3-1.6,4.3-5.1V3.6c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4v17.2c0,3.7-1.1,6.4-2.9,8.3c-1.9,1.9-4.7,2.9-8.1,2.9   C117.2,32,114.5,30.8,112.5,29.3"/>
+	<path fill="#FFFFFF" d="M152.9,18.6l-4.3-10.2l-4.3,10.2H152.9z M133.7,27.2l10.8-24.4c0.8-1.7,2.1-2.7,4-2.7h0.4   c1.9,0,3.2,1,3.9,2.7l10.8,24.4c0.2,0.5,0.4,0.9,0.4,1.4c0,1.8-1.4,3.3-3.2,3.3c-1.6,0-2.7-0.9-3.3-2.4l-2.1-4.9h-13.7l-2.2,5.1   c-0.6,1.3-1.7,2.1-3.1,2.1c-1.8,0-3.2-1.4-3.2-3.2C133.3,28.1,133.4,27.6,133.7,27.2"/>
+	<path fill="#FFFFFF" d="M1.8,1.8L1.8,1.8c2.4-2.4,6.2-2.4,8.5,0l19.9,19.9c2.4,2.4,2.4,6.2,0,8.5c-2.4,2.4-6.2,2.4-8.5,0L1.8,10.3   C-0.6,8-0.6,4.1,1.8,1.8"/>
+</g>
+</svg></header>
    <body>
       <div class=inputs>
-         <p> Select main colour:</p>
+         <p>Main:</p>
          <input class="jscolor" value="051947" onchange="updateHead(this.jscolor)" />
-         <p> Select main shadow colour:</p>
+         <p>Main shadow:</p>
          <input class="jscolor" value="FFC1A6" onchange="updateShadow(this.jscolor)"/>
-         <p> Select the eye-piece colour:</p>
+         <p>Eye-piece:</p>
          <input class="jscolor" value="FFFFFF" onchange="updateEyepiece(this.jscolor)"/>
-         <p> Select eye-piece shadow colour:</p>
+         <p>Eye-piece shadow:</p>
          <input class="jscolor" value="DCDCDC" onchange="updateShadoweye(this.jscolor)"/>
-         <p> Select eye colour:</p>
+         <p>Eyes:</p>
          <input class="jscolor" value="051947" onchange="updateEyes(this.jscolor)"/>
       </div>
       <div class="headcentre">
